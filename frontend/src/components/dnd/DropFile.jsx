@@ -9,11 +9,14 @@ export default function DropFile() {
 
     const handleFileRead = (e) => {
         const content = fileReader.result
-        const names = content.replace(/[\n\r]+/g, " ").split(" ")
+        const names = content.split("\n")
 
         let newTierlist = { ...tierlist }
 
         for (const name of names) {
+            if (name == "") {
+                continue
+            }
             newTierlist.items[name] = { id: name, content: name }
             newTierlist.rows.carrousel.items.push(name)
         }
