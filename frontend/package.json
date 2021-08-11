@@ -1,11 +1,12 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "html2canvas": "^1.2.2",
     "react": "^17.0.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-click-away-listener": "^2.0.3",

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { DragDropContext, Droppable } from "react-beautiful-dnd"
 import Row from "./Row"
 import styled from "styled-components"
@@ -6,6 +6,8 @@ import ItemsCarrrousel from "./ItemsCarrousel"
 import AddItem from "./AddItem"
 import data from "./data"
 import AddRow from "./AddRow"
+import DropFile from "./DropFile"
+import Screenshot from "./Screenshot"
 
 const TierlistContainer = styled.div`
     display: flex;
@@ -18,6 +20,7 @@ export const TierlistContext = React.createContext()
 
 export default function Tierlist() {
     const [tierlist, setTierlist] = useState(data)
+    const tierlistContainer = useRef(null)
 
     const onDragEnd = (result) => {
         const { destination, source, draggableId, type } = result
@@ -97,7 +100,7 @@ export default function Tierlist() {
 
     return (
         <TierlistContext.Provider value={{ tierlist, setTierlist }}>
-            <TierlistContainer>
+            <TierlistContainer ref={tierlistContainer}>
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Droppable
                         droppableId="all-rows"
@@ -131,7 +134,9 @@ export default function Tierlist() {
                     </Droppable>
                 </DragDropContext>
                 <AddRow />
-                <AddItem />
+                {/* <AddItem /> */}
+                <DropFile />
+                <Screenshot target={tierlistContainer} />
             </TierlistContainer>
         </TierlistContext.Provider>
     )

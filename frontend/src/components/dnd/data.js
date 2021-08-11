@@ -1,9 +1,5 @@
 const data = {
-    items: {
-        "item-1": { id: "item-1", content: "item 1" },
-        "item-2": { id: "item-2", content: "item 2" },
-        "item-3": { id: "item-3", content: "item 3" },
-    },
+    items: {},
     rows: {
         s: {
             id: "s",
@@ -38,7 +34,7 @@ const data = {
         carrousel: {
             id: "carrousel",
             title: "Carrousel",
-            items: ["item-1", "item-2", "item-3"],
+            items: [],
         },
     },
     rowOrder: ["s", "a", "b", "c", "d", "carrousel"],
