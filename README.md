@@ -1,3 +1,3 @@
 ## Real Time Tierlist Generator Site
 
-gabriellazcano.com/react-tierlist
+[Link to working example](gabriellazcano.com/react-tierlist)
